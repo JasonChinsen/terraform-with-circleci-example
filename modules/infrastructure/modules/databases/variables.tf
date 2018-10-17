@@ -1,4 +1,6 @@
 variable "environment" {}
+variable "sha" {}
+variable "team" {}
 
 variable "vpc-id" {}
 variable "vpc-cidr-block" {}

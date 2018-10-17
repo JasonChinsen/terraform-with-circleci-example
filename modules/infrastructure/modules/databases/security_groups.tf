@@ -1,11 +1,11 @@
-resource "aws_security_group" "allow-mysql-ingress" {
-  name        = "allow-mysql-ingress"
-  description = "Allow incoming mysql connections from the VPC."
+resource "aws_security_group" "allow-postgres-ingress" {
+  name        = "allow-postgres-ingress"
+  description = "Allow incoming postgres connections from the VPC."
   vpc_id      = "${var.vpc-id}"
 
   ingress {
-    from_port   = 3306
-    to_port     = 3306
+    from_port   = 5432
+    to_port     = 5432
     protocol    = "tcp"
     cidr_blocks = ["${var.vpc-cidr-block}"]
   }

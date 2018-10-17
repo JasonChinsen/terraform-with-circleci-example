@@ -47,7 +47,7 @@ terraform_init: &terraform_init
     command: |
       source $BASH_ENV
       cd environments/$TERRAFORM_ENVIRONMENT
-      terraform init
+#      terraform init
 
 apply_job: &apply_job
   <<: *default_config
@@ -62,7 +62,7 @@ apply_job: &apply_job
         command: |
           source $BASH_ENV
           cd environments/$TERRAFORM_ENVIRONMENT
-          terraform apply --auto-approve ../../terraform.plan
+#          terraform apply --auto-approve ../../terraform.plan
 
 jobs:
 
@@ -103,7 +103,7 @@ jobs:
           command: |
             source $BASH_ENV
             cd environments/$TERRAFORM_ENVIRONMENT
-            terraform plan -out=../../terraform.plan
+#            terraform plan -out=../../terraform.plan
       - persist_to_workspace:
           root: *working_directory
           paths:
